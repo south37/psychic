@@ -1,8 +1,6 @@
 # Psychic
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/psychic`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Psychic gets dynamic(using Ajax) site's HTML.
 
 ## Installation
 
@@ -22,7 +20,50 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Get Dynamic HTML in Ruby
+
+`Psychic.get` can get dynamic site's HTML. `<script>` is evaluated, then response is created.
+
+```ruby
+response = Psychic.get 'http://example.com/'  # GET http://example.com/
+response.body
+
+# Psychic response. The HTML p element is dynamicaly created.
+# <!doctype html>
+# <html>
+# <head></head>
+# <body>
+#   <div id="main">
+#     <p>Hello, World!</p>
+#   </div>
+#   <script>
+#     var p = document.createElement("p");
+#     var helloText = document.createTextNode("Hello, World!");
+#     p.appendChild(helloText);
+#     var main = document.getElementById("main");
+#     main.appendChild(p);
+#   </script>
+# </body>
+
+# Original response.
+# <!doctype html>
+# <html>
+# <head></head>
+# <body>
+#   <div id="main"></div>
+#   <script>
+#     var p = document.createElement("p");
+#     var helloText = document.createTextNode("Hello, World!");
+#     p.appendChild(helloText);
+#     var main = document.getElementById("main");
+#     main.appendChild(p);
+#   </script>
+# </body>
+```
+
+### Get Dynamic HTML in Terminal
+
+    $ psychic http://example.com/
 
 ## Development
 
@@ -32,7 +73,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/psychic.
+Bug reports and pull requests are welcome on GitHub at https://github.com/south37/psychic.
 
 
 ## License
