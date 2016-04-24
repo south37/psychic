@@ -1,10 +1,25 @@
 require 'spec_helper'
 
 describe Psychic do
-  it 'does something useful' do
-    stub_request(:get, "www.example.com").
-      to_return(:body => original_response)
-    expect(Psychic.get("http://www.example.com").body).to eq result_response
+  describe ".get" do
+    before do
+      current_thread = Thread.current
+      @server_thread = Thread.new do
+        start_server(response: original_response) do
+          current_thread.wakeup
+        end
+      end
+      Thread.stop
+    end
+
+    after do
+      Process.kill(:INT, Process.pid)
+      @server_thread.join
+    end
+
+    it "returns a dynamically created HTML body" do
+      expect(Psychic.get('127.0.0.1:8000').body).to eq result_response
+    end
   end
 
   def original_response
@@ -43,5 +58,19 @@ describe Psychic do
   </script>
 </body>
     EOF
+  end
+
+  def start_server(response:)
+    server = WEBrick::HTTPServer.new({
+      :BindAddress => '127.0.0.1',
+      :Port => 8000,
+      :StartCallback => Proc.new { yield }
+    })
+    server.mount_proc('/foo') do |req, res|
+      res.body = response
+    end
+    trap(:INT) { server.shutdown }
+    trap(:TERM) { server.shutdown }
+    server.start
   end
 end
