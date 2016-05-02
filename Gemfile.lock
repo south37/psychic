@@ -2,6 +2,8 @@ PATH
   remote: .
   specs:
     undead (0.1.0)
+      capybara (~> 2.1)
+      poltergeist (~> 1.9)
 
 GEM
   remote: https://rubygems.org/
@@ -54,8 +56,6 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.11)
-  capybara
-  poltergeist
   rake (~> 10.0)
   rspec (~> 3.0)
   undead!
