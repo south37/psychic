@@ -1,7 +1,7 @@
 require "capybara"
 require "capybara/poltergeist"
 
-module Psychic
+module Undead
   class Agent
     DEFAULT_OPTIONS = {
       js_errors: false,

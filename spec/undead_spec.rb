@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Psychic do
+describe Undead do
   describe ".get" do
     before do
       current_thread = Thread.current
@@ -18,7 +18,7 @@ describe Psychic do
     end
 
     it "returns a dynamically created HTML body" do
-      expect(Psychic.get('http://127.0.0.1:8000').gsub("\n", '')).to eq result_response.gsub("\n", '')
+      expect(Undead.get('http://127.0.0.1:8000').gsub("\n", '')).to eq result_response.gsub("\n", '')
     end
   end
 

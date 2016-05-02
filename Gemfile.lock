@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    psychic (0.1.0)
+    undead (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -56,7 +56,7 @@ DEPENDENCIES
   bundler (~> 1.11)
   capybara
   poltergeist
-  psychic!
+  undead!
   rake (~> 10.0)
   rspec (~> 3.0)
 

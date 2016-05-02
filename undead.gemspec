@@ -1,21 +1,21 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'psychic/version'
+require 'undead/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "psychic"
-  spec.version       = Psychic::VERSION
+  spec.name          = "undead"
+  spec.version       = Undead::VERSION
   spec.authors       = ["Nao Minami"]
   spec.email         = ["south37777@gmail.com"]
 
   spec.summary       = %q{Get dynamic site's HTML}
-  spec.homepage      = "https://github.com/south37/psychic"
+  spec.homepage      = "https://github.com/south37/undead"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "bin"
-  spec.executables   = ["psychic"]
+  spec.executables   = ["undead"]
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.11"

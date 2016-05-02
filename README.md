@@ -1,13 +1,13 @@
-# Psychic
+# Undead
 
-Psychic gets Dynamic HTML. Dynamic HTML are created by JavaScript.
+Undead gets Dynamic HTML. Dynamic HTML are created by JavaScript.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'psychic'
+gem 'undead'
 ```
 
 And then execute:
@@ -16,19 +16,19 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install psychic
+    $ gem install undead
 
 ## Usage
 
 ### Get Dynamic HTML in Ruby
 
-`Psychic.get` can get Dynamic HTML. `<script>` is evaluated, then HTML is created.
+`Undead.get` can get Dynamic HTML. `<script>` is evaluated, then HTML is created.
 
 ```ruby
-response = Psychic.get 'http://example.com/'  # GET http://example.com/
+response = Undead.get 'http://example.com/'  # GET http://example.com/
 response.body
 
-# Psychic's response. The HTML p element is dynamicaly created.
+# Undead's response. The HTML p element is dynamicaly created.
 # <!doctype html>
 # <html>
 # <head></head>
@@ -63,7 +63,7 @@ response.body
 
 ### Get Dynamic HTML in Terminal
 
-    $ psychic http://example.com/
+    $ undead http://example.com/
 
 ## Development
 
@@ -73,7 +73,7 @@ To install this gem onto your local machine, run `bundle exec rake install`.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/south37/psychic.
+Bug reports and pull requests are welcome on GitHub at https://github.com/south37/undead.
 
 
 ## License

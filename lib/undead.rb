@@ -1,6 +1,6 @@
-require "psychic/version"
+require "undead/version"
 
-module Psychic
+module Undead
   class << self
     def agent
       @agent ||= Agent.new
@@ -12,4 +12,4 @@ module Psychic
   end
 end
 
-require "psychic/agent"
+require "undead/agent"

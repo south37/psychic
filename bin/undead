@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
 $LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
-require "psychic"
+require "undead"
 
-print Psychic::get(ARGV[0])
+print Undead::get(ARGV[0])

@@ -1,3 +1,3 @@
-module Psychic
+module Undead
   VERSION = "0.1.0"
 end
