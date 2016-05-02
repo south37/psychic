@@ -56,9 +56,9 @@ DEPENDENCIES
   bundler (~> 1.11)
   capybara
   poltergeist
-  undead!
   rake (~> 10.0)
   rspec (~> 3.0)
+  undead!
 
 BUNDLED WITH
    1.11.2
