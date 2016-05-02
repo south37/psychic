@@ -20,13 +20,16 @@ Or install it yourself as:
 
 ## Usage
 
+### Get Dynamic HTML in Terminal
+
+    $ undead http://example.com/
+
 ### Get Dynamic HTML in Ruby
 
 `Undead.get` can get Dynamic HTML. `<script>` is evaluated, then HTML is created.
 
 ```ruby
 response = Undead.get 'http://example.com/'  # GET http://example.com/
-response.body
 
 # Undead's response. The HTML p element is dynamicaly created.
 # <!doctype html>
@@ -60,10 +63,6 @@ response.body
 #   </script>
 # </body>
 ```
-
-### Get Dynamic HTML in Terminal
-
-    $ undead http://example.com/
 
 ## Development
 
