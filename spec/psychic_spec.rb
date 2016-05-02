@@ -18,15 +18,16 @@ describe Psychic do
     end
 
     it "returns a dynamically created HTML body" do
-      expect(Psychic.get('127.0.0.1:8000').body).to eq result_response
+      expect(Psychic.get('http://127.0.0.1:8000').body.gsub("\n", '')).to eq result_response.gsub("\n", '')
     end
   end
 
   def original_response
     <<-EOF
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head></head>
+<head>
+</head>
 <body>
   <div id="main"></div>
   <script>
@@ -37,18 +38,18 @@ describe Psychic do
     main.appendChild(p);
   </script>
 </body>
+</html>
     EOF
   end
 
   def result_response
     <<-EOF
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head></head>
+<head>
+</head>
 <body>
-  <div id="main">
-    <p>Hello, World!</p>
-  </div>
+  <div id="main"><p>Hello, World!</p></div>
   <script>
     var p = document.createElement("p");
     var helloText = document.createTextNode("Hello, World!");
@@ -57,6 +58,7 @@ describe Psychic do
     main.appendChild(p);
   </script>
 </body>
+</html>
     EOF
   end
 
@@ -66,7 +68,7 @@ describe Psychic do
       :Port => 8000,
       :StartCallback => Proc.new { yield }
     })
-    server.mount_proc('/foo') do |req, res|
+    server.mount_proc('/') do |req, res|
       res.body = response
     end
     trap(:INT) { server.shutdown }
