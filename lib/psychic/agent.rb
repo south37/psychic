@@ -1,6 +1,5 @@
 require "capybara"
 require "capybara/poltergeist"
-require "psychic/download"
 
 module Psychic
   class Agent
@@ -17,7 +16,7 @@ module Psychic
 
     def get(url)
       @session.visit url
-      Download.new(@session.html)
+      @session.html
     end
   end
 end
