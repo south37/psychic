@@ -1,7 +1,15 @@
 require "psychic/version"
 
 module Psychic
-  # Your code goes here...
+  class << self
+    def agent
+      @agent ||= Agent.new
+    end
+
+    def get(url)
+      agent.get(url)
+    end
+  end
 end
 
 require "psychic/agent"
