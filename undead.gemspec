@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Nao Minami"]
   spec.email         = ["south37777@gmail.com"]
 
-  spec.summary       = %q{Get dynamic site's HTML}
+  spec.summary       = %q{Undead gets Dynamic HTML. Dynamic HTML are created by JavaScript.}
   spec.homepage      = "https://github.com/south37/undead"
   spec.license       = "MIT"
 
