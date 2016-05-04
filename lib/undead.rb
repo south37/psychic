@@ -12,4 +12,5 @@ module Undead
   end
 end
 
+require "undead/driver"
 require "undead/agent"

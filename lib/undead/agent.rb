@@ -1,22 +1,15 @@
-require "capybara"
-require "capybara/poltergeist"
-
 module Undead
   class Agent
     DEFAULT_OPTIONS = {
       js_errors: false,
-      timeout:   1000,
+      timeout: 1000,
+      headers: {
+        'User-Agent' => "Mozilla/5.0 (Macintosh; Intel Mac OS X)"
+      },
     }
 
-    Capybara.javascript_driver = :poltergeist
-    Capybara.default_selector = :css
-
     def initialize(options = {})
-      Capybara.register_driver :poltergeist do |app|
-        Capybara::Poltergeist::Driver.new(app, DEFAULT_OPTIONS.merge(options))
-      end
-      @session = Capybara::Session.new(:poltergeist)
-      @session.driver.headers = { 'User-Agent' => "Mozilla/5.0 (Macintosh; Intel Mac OS X)" }
+      @session = Driver.new(DEFAULT_OPTIONS.merge(options))
     end
 
     def get(url)
