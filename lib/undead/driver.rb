@@ -13,7 +13,7 @@ module Undead
 
     def browser
       @browser ||= begin
-        browser = Capybara::Poltergeist::Browser.new(server, client, logger)
+        browser = Undead::Browser.new(server, client, logger)
         browser.js_errors  = options[:js_errors] if options.key?(:js_errors)
         browser.debug      = true if options[:debug]
         browser
