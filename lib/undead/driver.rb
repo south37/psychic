@@ -15,7 +15,6 @@ module Undead
       @browser ||= begin
         browser = Capybara::Poltergeist::Browser.new(server, client, logger)
         browser.js_errors  = options[:js_errors] if options.key?(:js_errors)
-        browser.extensions = options.fetch(:extensions, [])
         browser.debug      = true if options[:debug]
         browser
       end
