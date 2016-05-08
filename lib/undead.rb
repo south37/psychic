@@ -12,6 +12,7 @@ module Undead
   end
 end
 
+require "undead/errors"
 require "undead/browser"
 require "undead/driver"
 require "undead/agent"

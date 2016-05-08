@@ -1,4 +1,4 @@
-require "capybara/poltergeist/errors"
+module Capybara; end
 require "capybara/poltergeist/command"
 require 'multi_json'
 require 'time'
@@ -6,11 +6,11 @@ require 'time'
 module Undead
   class Browser
     ERROR_MAPPINGS = {
-      'Poltergeist.JavascriptError'   => Capybara::Poltergeist::JavascriptError,
-      'Poltergeist.FrameNotFound'     => Capybara::Poltergeist::FrameNotFound,
-      'Poltergeist.InvalidSelector'   => Capybara::Poltergeist::InvalidSelector,
-      'Poltergeist.StatusFailError'   => Capybara::Poltergeist::StatusFailError,
-      'Poltergeist.NoSuchWindowError' => Capybara::Poltergeist::NoSuchWindowError
+      'Poltergeist.JavascriptError'   => Undead::JavascriptError,
+      'Poltergeist.FrameNotFound'     => Undead::FrameNotFound,
+      'Poltergeist.InvalidSelector'   => Undead::InvalidSelector,
+      'Poltergeist.StatusFailError'   => Undead::StatusFailError,
+      'Poltergeist.NoSuchWindowError' => Undead::NoSuchWindowError,
     }
 
     attr_reader :server, :client, :logger
@@ -49,12 +49,12 @@ module Undead
       json = JSON.load(response)
 
       if json['error']
-        klass = ERROR_MAPPINGS[json['error']['name']] || Capybara::Poltergeist::BrowserError
+        klass = ERROR_MAPPINGS[json['error']['name']] || Undead::BrowserError
         raise klass.new(json['error'])
       else
         json['response']
       end
-    rescue Capybara::Poltergeist::DeadClient
+    rescue Undead::DeadClient
       restart
       raise
     end
