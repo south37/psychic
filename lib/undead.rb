@@ -1,5 +1,3 @@
-require "undead/version"
-
 module Undead
   class << self
     def agent
@@ -12,9 +10,5 @@ module Undead
   end
 end
 
-require "undead/errors"
-require "undead/command"
-require "undead/browser"
-require "undead/server"
-require "undead/driver"
 require "undead/agent"
+require "undead/version"

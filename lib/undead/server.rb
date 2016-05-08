@@ -1,3 +1,4 @@
+require "undead/errors"
 module Capybara; end
 require "capybara/poltergeist/web_socket_server"
 

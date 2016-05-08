@@ -1,3 +1,5 @@
+require "undead/browser"
+require "undead/server"
 require 'capybara/poltergeist'
 
 module Undead

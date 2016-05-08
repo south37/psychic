@@ -1,3 +1,5 @@
+require "undead/driver"
+
 module Undead
   class Agent
     DEFAULT_OPTIONS = {

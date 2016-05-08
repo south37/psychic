@@ -1,3 +1,5 @@
+require "undead/command"
+require "undead/errors"
 require 'multi_json'
 require 'time'
 
