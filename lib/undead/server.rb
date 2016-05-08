@@ -1,6 +1,5 @@
 require "undead/errors"
-module Capybara; end
-require "capybara/poltergeist/web_socket_server"
+require "undead/web_socket_server"
 
 module Undead
   class Server
@@ -21,7 +20,7 @@ module Undead
     end
 
     def start
-      @socket = Capybara::Poltergeist::WebSocketServer.new(fixed_port, timeout)
+      @socket = Undead::WebSocketServer.new(fixed_port, timeout)
     end
 
     def stop
