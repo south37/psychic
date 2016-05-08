@@ -20,10 +20,6 @@ module Undead
       end
     end
 
-    def inspector
-      @inspector ||= options[:inspector] && Inspector.new(options[:inspector])
-    end
-
     def server
       @server ||= Capybara::Poltergeist::Server.new(options[:port], options.fetch(:timeout) { DEFAULT_TIMEOUT })
     end
@@ -45,7 +41,6 @@ module Undead
       # Braintree).
       list += ["--ignore-ssl-errors=yes"] unless list.grep(/ignore-ssl-errors/).any?
       list += ["--ssl-protocol=TLSv1"] unless list.grep(/ssl-protocol/).any?
-      list += ["--remote-debugger-port=#{inspector.port}", "--remote-debugger-autorun=yes"] if inspector
       list
     end
 
