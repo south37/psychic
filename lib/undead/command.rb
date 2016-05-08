@@ -1,4 +1,4 @@
-require "undead/json"
+require "json"
 require "securerandom"
 
 module Undead

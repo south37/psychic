@@ -18,7 +18,6 @@ Gem::Specification.new do |spec|
   spec.executables   = ["undead"]
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency "multi_json"
   spec.add_runtime_dependency "cliver",           "~> 0.3.1"
   spec.add_runtime_dependency "websocket-driver", ">= 0.2.0"
 
