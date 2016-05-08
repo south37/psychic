@@ -1,5 +1,5 @@
-require 'undead/json'
-require 'securerandom'
+require "undead/json"
+require "securerandom"
 
 module Undead
   class Command

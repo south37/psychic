@@ -1,6 +1,6 @@
 require "undead/utility"
 require "timeout"
-require 'cliver'
+require "cliver"
 
 module Undead
   class Client

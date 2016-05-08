@@ -1,6 +1,6 @@
-require 'undead/json'
-require 'socket'
-require 'websocket/driver'
+require "undead/json"
+require "socket"
+require "websocket/driver"
 
 module Undead
   # This is a 'custom' Web Socket server that is designed to be synchronous. What

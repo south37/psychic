@@ -1,7 +1,7 @@
 require "undead/command"
 require "undead/errors"
-require 'multi_json'
-require 'time'
+require "multi_json"
+require "time"
 
 module Undead
   class Browser
