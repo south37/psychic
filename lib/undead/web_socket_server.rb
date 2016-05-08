@@ -1,3 +1,4 @@
+require 'undead/json'
 require 'socket'
 require 'websocket/driver'
 

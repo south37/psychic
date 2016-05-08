@@ -1,6 +1,6 @@
 require "undead/browser"
+require "undead/client"
 require "undead/server"
-require 'capybara/poltergeist'
 
 module Undead
   class Driver
@@ -27,7 +27,7 @@ module Undead
     end
 
     def client
-      @client ||= Capybara::Poltergeist::Client.start(server,
+      @client ||= Undead::Client.start(server,
         :path              => options[:phantomjs],
         :window_size       => options[:window_size],
         :phantomjs_options => phantomjs_options,
