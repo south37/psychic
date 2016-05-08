@@ -21,7 +21,7 @@ module Undead
     end
 
     def server
-      @server ||= Capybara::Poltergeist::Server.new(options[:port], options.fetch(:timeout) { DEFAULT_TIMEOUT })
+      @server ||= Undead::Server.new(options[:port], options.fetch(:timeout) { DEFAULT_TIMEOUT })
     end
 
     def client

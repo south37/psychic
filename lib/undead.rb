@@ -15,5 +15,6 @@ end
 require "undead/errors"
 require "undead/command"
 require "undead/browser"
+require "undead/server"
 require "undead/driver"
 require "undead/agent"
