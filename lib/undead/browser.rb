@@ -1,5 +1,3 @@
-module Capybara; end
-require "capybara/poltergeist/command"
 require 'multi_json'
 require 'time'
 
@@ -40,7 +38,7 @@ module Undead
     end
 
     def command(name, *args)
-      cmd = Capybara::Poltergeist::Command.new(name, *args)
+      cmd = Undead::Command.new(name, *args)
       log cmd.message
 
       response = server.send(cmd)
